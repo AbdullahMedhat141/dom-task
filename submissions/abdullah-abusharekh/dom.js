@@ -26,7 +26,20 @@ document.body.childNodes.forEach((node) => {
 basically white spaces and the browser turns them into nodes. */
 
 //Task 2
+const divEl = document.createElement("div");
+divEl.classList.add("card");
+divEl.setAttribute("data-role", "admin");
 
+const h2 = document.createElement("h2");
+h2.textContent = "Access Panel";
+
+const newP = document.createElement("p");
+newP.textContent = "Authenticated";
+
+divEl.append(h2, newP);
+const body = document.body;
+body.append(divEl);
+////////////////////////////////////
 const card = document.querySelector(".card");
 console.log(card.dataset.role);
 ///////////////////////////////////
