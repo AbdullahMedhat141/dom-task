@@ -15,17 +15,12 @@ but children just takes the children nodes. */
 console.log(document.body.childNodes[0].nodeType); // 3
 console.log(document.body.childNodes[0].nodeName); // #text
 ///////////////////////////////////
-// const secondParagraph = document.querySelector("section p:nth-of-type(2)");
 const section = document.getElementsByTagName("section")[0];
 const secondParagraph = section.getElementsByTagName("p")[1];
 
 console.log(secondParagraph.previousElementSibling); // siblings
 
 // Twist
-// document.body.childNodes.forEach((node) => {
-//   if (node.nodeType === 3) console.log(node);
-// });
-
 document.body.childNodes.forEach((node) => {
   if (node.nodeType === 3 && node.textContent.trim() === "") {
     console.log("Unexpected text node:", node);
@@ -37,7 +32,6 @@ basically white spaces and the browser turns them into nodes. */
 //Task 2
 const divEl = document.createElement("div");
 divEl.classList.add("card");
-// divEl.setAttribute("data-role", "admin");
 divEl.dataset.role = "admin";
 
 const h2 = document.createElement("h2");
